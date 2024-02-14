@@ -1,0 +1,9 @@
+package com.chojaehyeok.realEstate.controller;
+
+import com.chojaehyeok.realEstate.dto.request.CheckIdRequestDto;
+import com.chojaehyeok.realEstate.dto.response.CheckIdResponseDto;
+
+public interface AuthController {
+	CheckIdResponseDto checkId(CheckIdRequestDto request);
+	
+}

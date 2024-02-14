@@ -1,0 +1,77 @@
+package com.chojaehyeok.realEstate.service.implement;
+
+import com.chojaehyeok.realEstate.dto.request.CheckIdRequestDto;
+import com.chojaehyeok.realEstate.dto.request.SendCodeRequestDto;
+import com.chojaehyeok.realEstate.dto.response.CheckIdResponseDto;
+import com.chojaehyeok.realEstate.dto.response.SendCodeResponseDto;
+import com.chojaehyeok.realEstate.interfaces.Code;
+import com.chojaehyeok.realEstate.repository.UserRepository;
+import com.chojaehyeok.realEstate.repository.implement.UserRepositoryImplement;
+import com.chojaehyeok.realEstate.service.AuthService;
+
+public class AuthServiceImplement implements AuthService {
+	
+	private UserRepository userRepository;
+	
+	public AuthServiceImplement (UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+
+	@Override
+	public CheckIdResponseDto checkId(CheckIdRequestDto dto) { // CheckIdRequestDto dto = controller에서 받아온 데이터
+		
+		CheckIdResponseDto result = new CheckIdResponseDto ();
+		
+		try {
+			
+			String id = dto.getId(); // 데이터베이스에서 id가 있는지 확인
+			
+			boolean existedId = userRepository.existById(id);
+			
+			if (existedId)result.setCode(Code.DI);
+			else result.setCode(Code.SU);
+						
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			result.setCode(Code.DBE);
+			
+		}
+		
+		
+		return result;
+	}
+
+	@Override
+	public SendCodeResponseDto sendCode(SendCodeRequestDto dto) {
+		
+		SendCodeResponseDto result = new SendCodeResponseDto ();
+		
+		try {
+			
+			String email = dto.getEmail();
+			String authenticationCode = 
+			
+		} catch (Exception exception){
+			exception.printStackTrace();
+			result.setCode(Code.DBE);
+		}
+		
+		return result;
+	}
+
+	private String randomString() {
+		
+		char[] randomString = new char[4];
+		
+		Random random = new Random();
+		
+		for (int index = 0; index <4; index++) {
+			randomString [index] = Random
+		}
+		
+		return new String(randomString);
+		
+	}
+	
+	
+}

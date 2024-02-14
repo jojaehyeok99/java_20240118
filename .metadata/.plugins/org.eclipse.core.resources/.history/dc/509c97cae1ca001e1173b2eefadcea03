@@ -1,0 +1,5 @@
+package com.chojaehyeok.realEstate.dto.response;
+
+public class CheckIdResponseDto {
+
+}

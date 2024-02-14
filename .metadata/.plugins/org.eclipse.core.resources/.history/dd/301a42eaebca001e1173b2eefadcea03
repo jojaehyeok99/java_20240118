@@ -1,0 +1,17 @@
+package com.chojaehyeok.realEstate.repository.implement;
+
+import java.sql.Connection;
+
+import com.chojaehyeok.realEstate.repository.UserRepository;
+
+public class UserRepositoryImplement implements UserRepository {
+	
+	private Connection connection;
+	
+	@Override
+	public boolean existById(String id) {
+		
+		return false;
+	}
+
+}

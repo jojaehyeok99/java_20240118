@@ -1,0 +1,22 @@
+package com.chojaehyeok.realEstate.controller.implement;
+
+import com.chojaehyeok.realEstate.controller.AuthController;
+import com.chojaehyeok.realEstate.dto.request.CheckIdRequestDto;
+import com.chojaehyeok.realEstate.dto.response.CheckIdResponseDto;
+import com.chojaehyeok.realEstate.service.AuthService;
+import com.chojaehyeok.realEstate.service.implement.AuthServiceImplement;
+
+public class AuthControllerImplement implements AuthController {
+	
+	private AuthService authService = new AuthServiceImplement();
+	
+	@Override
+	public CheckIdResponseDto checkId(CheckIdRequestDto request) {
+		boolean validId = request.validId();
+		
+		
+		CheckIdResponseDto response = authService.checkId(request);
+		return response;
+	}
+
+}

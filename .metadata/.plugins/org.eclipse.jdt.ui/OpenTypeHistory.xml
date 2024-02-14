@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=realEstate/src&lt;com.chojaehyeok.realEstate.controller{AuthController.java[AuthController" modifiers="513" timestamp="1707893386808"/>
+    <typeInfo handle="=realEstate/src&lt;com.chojaehyeok.realEstate.service{AuthService.java[AuthService" modifiers="513" timestamp="1707894366741"/>
+    <typeInfo handle="=realEstate/src&lt;com.chojaehyeok.realEstate.repository{UserRepository.java[UserRepository" modifiers="513" timestamp="1707887758631"/>
+    <typeInfo handle="=realEstate/src&lt;com.chojaehyeok.realEstate.repository{EmailAuthenticationRepository.java[EmailAuthenticationRepository" modifiers="513" timestamp="1707895829880"/>
+</typeInfoHistroy>

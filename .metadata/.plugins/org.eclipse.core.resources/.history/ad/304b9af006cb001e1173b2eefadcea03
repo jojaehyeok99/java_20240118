@@ -1,0 +1,37 @@
+package com.chojaehyeok.realEstate.controller.implement;
+
+import com.chojaehyeok.realEstate.controller.AuthController;
+import com.chojaehyeok.realEstate.dto.request.CheckIdRequestDto;
+import com.chojaehyeok.realEstate.dto.request.SendCodeRequestDto;
+import com.chojaehyeok.realEstate.dto.response.CheckIdResponseDto;
+import com.chojaehyeok.realEstate.dto.response.SendCodeResponseDto;
+import com.chojaehyeok.realEstate.interfaces.Code;
+import com.chojaehyeok.realEstate.service.AuthService;
+import com.chojaehyeok.realEstate.service.implement.AuthServiceImplement;
+
+public class AuthControllerImplement implements AuthController {
+	
+	private AuthService authService;
+	
+	public AuthControllerImplement (AuthService authService) {
+		this.authService = authService;
+	}
+	
+	
+	@Override
+	public CheckIdResponseDto checkId(CheckIdRequestDto request) {
+		boolean validId = request.validId();
+		if(!validId) return new CheckIdResponseDto(Code.VF, null); // 검증 처리 과정 - 실패하면 다시 돌려보냄
+		
+		CheckIdResponseDto response = authService.checkId(request);
+		return response;
+	}
+
+
+	@Override
+	public SendCodeResponseDto sendCode(SendCodeRequestDto request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.chojaehyeok.realEstate.dto.request;
+
+public class CheckIdRequestDto {
+	
+	private String id;
+	
+	public String getId() {
+		return id;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,26 @@
+package com.chojaehyeok.realEstate.service.implement;
+
+import com.chojaehyeok.realEstate.dto.request.CheckIdRequestDto;
+import com.chojaehyeok.realEstate.dto.response.CheckIdResponseDto;
+import com.chojaehyeok.realEstate.interfaces.Code;
+import com.chojaehyeok.realEstate.service.AuthService;
+
+public class AuthServiceImplement implements AuthService {
+
+	@Override
+	public CheckIdResponseDto checkId(CheckIdRequestDto dto) {
+		
+		CheckIdResponseDto result = new CheckIdResponseDto ();
+		
+		try {
+			
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			result.setCode(Code.DBE);
+		}
+		
+		
+		return null;
+	}
+
+}

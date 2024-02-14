@@ -1,0 +1,8 @@
+package com.chojaehyeok.realEstate.repository;
+
+public interface EmailAuthenticationRepository {
+	
+	boolean existsByEmail(String email);
+	
+	void save (String email, String authenticationCode);
+}

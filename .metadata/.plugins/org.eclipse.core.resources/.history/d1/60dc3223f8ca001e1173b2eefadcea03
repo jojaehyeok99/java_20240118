@@ -1,0 +1,6 @@
+package com.chojaehyeok.realEstate.repository;
+
+public interface UserRepository {
+	
+	boolean existById(String id);
+}

@@ -1,0 +1,42 @@
+package com.chojaehyeok.realEstate.repository.implement;
+
+import java.sql.Connection;
+
+import com.chojaehyeok.realEstate.repository.EmailAuthenticationRepository;
+
+public class EmailAuthenticationRepositoryImplement implements EmailAuthenticationRepository {
+
+	private Connection connection;
+	
+	public EmailAuthenticationRepositoryImplement ( ) {
+		try {
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			final String URL = "jdbc:mysql://127.0.0.1:3306/";
+		} catch (Exception exception) {
+			
+			
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	@Override
+	public boolean existsByEmail(String email) {
+		
+		return false;
+	}
+
+	@Override
+	public void save(String email, String authenticationCode) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.chojaehyeok.realEstate.service;
+
+public interface AuthService {
+
+}

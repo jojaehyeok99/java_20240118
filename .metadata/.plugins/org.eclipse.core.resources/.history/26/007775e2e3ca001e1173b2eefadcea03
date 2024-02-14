@@ -1,0 +1,5 @@
+package com.chojaehyeok.realEstate.controller;
+
+public interface AuthController {
+	checkId();
+}

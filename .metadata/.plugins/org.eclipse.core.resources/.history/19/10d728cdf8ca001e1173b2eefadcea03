@@ -1,0 +1,40 @@
+package com.chojaehyeok.realEstate.service.implement;
+
+import com.chojaehyeok.realEstate.dto.request.CheckIdRequestDto;
+import com.chojaehyeok.realEstate.dto.response.CheckIdResponseDto;
+import com.chojaehyeok.realEstate.interfaces.Code;
+import com.chojaehyeok.realEstate.repository.UserRepository;
+import com.chojaehyeok.realEstate.repository.implement.UserRepositoryImplement;
+import com.chojaehyeok.realEstate.service.AuthService;
+
+public class AuthServiceImplement implements AuthService {
+	
+	private UserRepository userrepository = new UserRepositoryImplement ();
+	
+
+	@Override
+	public CheckIdResponseDto checkId(CheckIdRequestDto dto) {
+		
+		CheckIdResponseDto result = new CheckIdResponseDto ();
+		
+		try {
+			
+			String id = dto.getId();
+			
+			boolean existedId = userrepository.existById(id);
+			if (existedId)result.setCode(Code.DI);
+			else result.setCode(Code.SU);
+			
+			
+			
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			result.setCode(Code.DBE);
+			
+		}
+		
+		
+		return result;
+	}
+
+}
